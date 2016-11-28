@@ -1,0 +1,88 @@
+<div class="container" >
+  <h2 id="menu-categories-title" class="text-center">Sign up for our newsletter!</h2>
+  <br>
+  
+  
+  
+  <fieldset>
+      <form name='regForm' novalidate>
+		
+		  
+        <input type="text" name="firstname" placeholder="first name" size="25"
+          ng-model="regCtrl.firstname"
+		  required>
+          <span class="info-capitalize">{{regCtrl.firstname}}</span>
+          <span
+            ng-if="regForm.firstname.$error.required && regForm.firstname.$touched" class="message">
+            Please enter your first name
+          </span>
+          <br>
+        
+        
+        <input type="text" name="lastname" placeholder="last name" size="25"
+          ng-model="regCtrl.lastname"
+		  required>
+          <span class="info-capitalize">{{ regCtrl.lastname }}</span>
+          <span
+            ng-if="regForm.lastname.$error.required && regForm.lastname.$touched" class="message">
+            Please enter your last name
+          </span>
+          <br>  
+  
+		
+        <input type="email" name="email" placeholder="email" size="25"
+          ng-model="regCtrl.email"
+          required>
+          <span ng-if="regForm.email.$invalid && regForm.email.$touched" class="message">
+            Please enter a valid email address: user@domain 
+          </span>
+          <br>
+        
+		
+        <input type="text" name="phone" placeholder="phone" size="25"
+          ng-model="regCtrl.phone"
+          pattern="(\d{3})-(\d{3})-(\d{4})">
+          <span ng-if="regForm.phone.$invalid && regForm.phone.$touched" class="message" class="message">
+            Phone must be in the format ###-###-####
+          </span>
+          <br>
+        
+    
+    
+    
+        
+          <input type="text"   name="searchTerm" placeholder="favorite menu item e.g L1" size="25"
+        
+          ng-model="regCtrl.searchTerm"
+          required
+          minlength="2"
+          ng-maxlength="3">
+          <span class="message">{{ regCtrl.searchTerm }}        {{ regCtrl.message }}</span>
+          <span
+            ng-if="(regForm.searchTerm.$error.minlength || regForm.searchTerm.$error.required) && regForm.searchTerm.$touched"
+            class="message">
+           Menu item must be at least 2 characters long e.g. L1
+          </span>
+          <span ng-if="regForm.searchTerm.$error.maxlength && regForm.searchTerm.$touched"
+          class="message">
+            Menu item must not be longer than 3 characters e.g. C19
+          </span>
+           <br>
+        
+           
+
+        <button
+          ng-disabled="regForm.$invalid"
+          ng-click="regCtrl.submit()">Submit</button>
+
+         
+      </form>
+    </fieldset>
+
+   
+    
+      
+   
+  
+
+</div>

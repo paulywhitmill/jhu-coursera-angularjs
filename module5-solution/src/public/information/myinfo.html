@@ -1,0 +1,21 @@
+<div class="container" >
+  <h2 id="menu-categories-title" class="text-center">Your Information</h2>
+  <br>
+  
+  <div class="text-center" >
+	<h4>Not signed up yet? ... Sign up now!</h4>
+	<a ui-sref="public.register"><button>Sign Up</button></a>
+  </div>      
+  
+	  <div class="text-center" >
+			<div class="info-capitalize"><h4>Name:  {{myinfoCtrl.info[0]}}  {{myinfoCtrl.info[1]}}</h4></div>
+			<div><h4>Email:  {{myinfoCtrl.info[2]}}</h4></div>
+			<div><h4>Phone:  {{myinfoCtrl.info[3]}}</h4></div>
+			<div><h4>Favorite menu item:  {{myinfoCtrl.favorite.name}}</h4></div>
+			<div><h3>{{myinfoCtrl.favorite.short_name}}</h3></div>
+			<div><h4>{{myinfoCtrl.favorite.name}}</h4></div>
+			<div><img ng-src="{{myinfoCtrl.info[5]}}"></div>
+			<div><h5>{{myinfoCtrl.favorite.description}}</h5></div>
+	</div>
+  
+</div>
